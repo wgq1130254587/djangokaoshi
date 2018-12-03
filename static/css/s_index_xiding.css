@@ -1,0 +1,14 @@
+/*吸顶搜索框的css样式*/
+#s_xiding{width: 100%;height: 50px;background: #313131;position: fixed;top:0px;margin:0 auto;padding: 0;display: none;}
+#s_xidingimg{float: left;padding-left: 300px;padding-top: 5px;}
+
+
+/*右边侧栏信息栏 固定 css sidebar*/
+#sidebar{width:35px;height: 690px;background: #000000;position: fixed;right:0;top:0}
+#sidebar1{width: 36px;height: 37px;overflow: hidden;padding-top: 50px;}
+#sidebar2{width: 36px;height: 47px;overflow: hidden;padding-top: 30px;}
+#sidebar3{width: 35px;height: 105px;overflow: hidden;padding-top: 30px;}
+#sidebar4{width: 35px;height: 50px;overflow: hidden;padding-top: 30px;}
+#sidebar5{width: 35px;height: 50px;overflow: hidden;padding-top: 30px;}
+#sidebar6{width: 35px;height: 50px;overflow: hidden;padding-top: 30px;}
+#sidebar7{width: 34px;height: 46px;overflow: hidden;padding-top: 30px;cursor:pointer;}

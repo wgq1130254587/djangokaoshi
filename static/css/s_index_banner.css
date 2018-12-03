@@ -1,0 +1,257 @@
+/*莆田商城首页的css样式*/
+/*万能清浮动*/
+.clear:after{content:".";clear:both;display:block;height:0;overflow:hidden;visibility:hidden;}
+*{
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+}
+body{
+	width:1263px;
+	height:auto;
+}
+/*广告banner*/
+.banner{
+	position: relative;
+	width: 100%;
+	
+}
+/*广告banner  左边部分*/
+.banner .b_left{
+	float: left;
+	height: 487px;
+	width: 211px;
+	margin-left: 27px;
+	border: solid 1px #999999;
+}
+.b_left ul{
+	height: 280px;
+}
+.b_left ul li{
+	height: 37px;
+	width: 210px;
+	border-bottom:solid 1px #999999 ;
+	z-index: 100;
+}
+.b_left ul a{
+	text-decoration: none;
+	color:black;
+	font-size: 13px;
+	display: block;
+	line-height: 35px;
+	padding-left: 30px;
+}
+.b_left ul a img{
+	margin-right: 20px;
+}
+/*广告banner  中间部分*/
+.banner .b_middle{
+	float: left;
+	height: 487px;
+	width: 788px;
+}
+.b_middle .carousel_top{
+	width: 100%;
+	height: 310px;
+	position: relative;
+}
+.hidden{
+	overflow: hidden;
+}
+#list_lunbo{
+	height: 310px;
+}
+#list_lunbo li{
+	float: left;
+	height: 309px;
+}
+/*上层 轮播图按钮*/
+#list_button{
+	position:absolute;
+	right: 40px;
+	bottom:40px;
+}
+#list_button li{
+	float: left;
+	background:grey;
+	width: 23px;
+	height:8px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+/*轮播图下层 .carousel_bottom*/
+.b_middle .carousel_bottom{
+	width:768px;
+	height: 176px;
+	position: relative;
+	overflow: hidden;
+}
+/*#lunbo_bottom_l{
+	position: absolute;
+	top: 90px;
+	left: 20px;
+	background: black;
+	z-index: 10;
+	width: 30px;
+	height: 30px;
+}
+#lunbo_bottom_r{
+	position: absolute;
+	top: 90px;
+	right: 20px;
+	background: black;
+	z-index: 10;
+	width: 30px;
+	height: 30px;
+}*/
+.carousel_bottom #lunbo_bottom{
+	position: absolute;
+	height: 175px;
+	width: 3000px;
+}
+#lunbo_bottom li img {
+	width:256px;
+	height: 175px;
+	cursor: pointer;
+}
+/*广告banner  右边部分*/
+.banner .b_right{
+	float: left;
+	height: 487px;
+	width: 201px;
+}
+.b_right .b_r_1{
+	height: 93px;
+	width: 100%;
+	font-size: 12px;
+	color: #999999;
+}
+.b_right .b_r_1 span{
+	margin-left: 14px;
+}
+.b_right .b_r_2{
+	height: 30px;
+	width: 100%;
+	border: 1px solid #e7e7e7;
+	overflow: hidden;
+}
+.b_right .b_r_2 span {
+	display: block;
+	float: left;
+	width: 90px;
+	line-height: 30px;
+	font-size: 12px;
+	text-align: center;
+	font-weight: 700;
+/*	border-right: solid 1px #E7E7E7;*/
+}
+.b_right .b_r_3{
+	height:126px;
+	width: 100%;
+}
+.b_right .b_r_3 div{
+	padding: 20px;
+}
+.b_right .b_r_4{
+	height: 30px;
+	width: 100%;
+	background: #f0f0f0;
+}
+.b_right .b_r_4 span{
+	font-size: 12px;
+	color: #999999;
+}
+.b_right .b_r_5{
+	height:200px;
+	width: 100%;
+	background: #e6e6e6;
+}
+
+/*banner 添加左边  下拉列表 定位*/
+#banner_xiala1{
+	font-size: 13px;
+	color: #666666;
+	width: 650px;
+	height: 270px;
+	background: white;
+	border:#c40000 solid 1px;
+	position: absolute;
+	top: 1px;
+	left: 239px;
+	display: none;
+}
+#banner_xiala1 ul{
+	width: 500px;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: dashed 1px #999999;
+}
+#banner_xiala1 li{
+	overflow: hidden;
+}
+#banner_xiala1 li span{
+	display: block;
+	float: left;
+	width: 80px;
+	margin-left: 10px;
+	text-align: center;
+}
+#banner_xiala2{
+	font-size: 13px;
+	color:#666666;
+	width: 650px;
+	height: 150px;
+	background: white;
+	border:#c40000 solid 1px;
+	position: absolute;
+	top: 38.5px;
+	left: 239px;
+	display: none;
+}
+#banner_xiala2 ul{
+	width: 500px;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: dashed 1px #999999;
+}
+#banner_xiala2 li{
+	overflow: hidden;
+}
+#banner_xiala2 li span{
+	display: block;
+	float: left;
+	width: 80px;
+	margin-left: 10px;
+	text-align: center;
+}
+#banner_xiala3{
+	font-size: 13px;
+	color:#666666;
+	width: 650px;
+	height: 150px;
+	background: white;
+	border:#c40000 solid 1px;
+	position: absolute;
+	top: 76px;
+	left: 239px;
+	display: none;
+}
+#banner_xiala3 ul{
+	width: 500px;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: dashed 1px #999999;
+}
+#banner_xiala3 li{
+	overflow: hidden;
+}
+#banner_xiala3 li span{
+	display: block;
+	float: left;
+	width: 80px;
+	margin-left: 10px;
+	text-align: center;
+}

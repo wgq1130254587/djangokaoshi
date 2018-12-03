@@ -1,0 +1,31 @@
+[
+	{
+		"img":"img/introduce.png",
+		"backgroundimg":"url(img/introduce.png)",
+		"name":"祥冠春秋运动鞋男女款登山鞋透气新款情侣款旅游鞋GORE-TEX徒步鞋",
+		"price":"本 店 价:<span>￥228.00</span>",
+		"idname":1
+	},
+	{
+		"img":"img/introduce2.png",
+		"backgroundimg":"url(img/introduce2.png)",
+		"name":"祥冠户外靴男登山鞋马丁靴运动鞋英伦军靴男高帮防水真皮沙漠靴",
+		"price":"本 店 价:<span>￥268.00</span>",
+		"idname":2
+	},
+		{
+		"img":"img/introduce3.png",
+		"backgroundimg":"url(img/introduce3.png)",
+		"name":"祥冠夏季户外鞋情侣登山鞋徒步鞋男女士春秋短靴系带高帮防滑防水",
+		"price":"本 店 价:<span>￥298.00</span>",
+		"idname":3
+	},
+		{
+		"img":"img/introduce4.png",
+		"backgroundimg":"url(img/introduce4.png)",
+		"name":"璐妮女款浅口字母帆布鞋平底圆头懒人鞋套脚一脚蹬鞋子潮2015夏",
+		"price":"本 店 价:<span>￥129.00</span>",
+		"idname":4
+	}
+]
+

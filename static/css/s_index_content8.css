@@ -1,0 +1,31 @@
+/*商品列表content8 css样式*/
+/*左  中  右  三块布局*/
+.content8{width: 100%;height: 591px;}
+/*左边布局*/
+.content8 .content8_left{width: 212px;height: 538px;float: left;padding: 22px 0 22px 26px;}
+.con8_left_link{background:#9c59b8;}
+.con8_left_link ul{	width: 212px;height: 220px;margin-top: -3px;}
+.con8_left_link ul li{width: 200px;overflow: hidden;border-bottom: solid 1px #7d97a3;}
+.con8_left_link ul li a{margin:2px;display:block;float: left;line-height:35px;width: 95px;text-decoration: none;font-size: 12px;color: white;text-align: center;}
+.con8_left_link ul li a:hover{background:blueviolet;}
+/*中间 动态*/
+.content8 .content8_middle{height: 538px;width: 785px;padding: 22px 0;float: left;overflow: hidden;}
+.con8_list{width: 100%;height: 43px;background: white;}
+.con8_list_ul{overflow: hidden;list-style: none;}
+.con8_list_li{color: #666666;float: left; width: 195px;text-align: center;line-height: 44px;font-size: 13px;cursor: pointer;font-weight: 600;}
+	/*商品 goods*/
+.con8_goods{width: 785px;height: 502px;display: none;}
+	/**/
+.con8_goods img{width: 160px;height: 160px;}
+.con8_subgoods{width: 160px;height: 225px;padding: 12px 17px;border: solid 1px gainsboro;float: left;}
+.con8_shopid{text-decoration: none;font-size: 13px;color: #3C3C3C;margin-top: 3px;}
+.con8_shopid:hover{text-decoration: underline;color: #C40000;}
+.con8_pricename{margin-right: 4px;color:#C40000;font-weight: 600;}
+.con8_price{color:#999999;text-decoration: line-through;font-size: 13px;font-weight: 600;}
+.con8_priceid{margin-top: 5px;}
+.con8_price_c{margin-top: 2px;}
+	 /*鼠标切换样式*/
+	.con8_tab_li{border-bottom:2px solid #9c59b8;position:relative;}
+/*右边 */
+.content8 .content8_right{margin-left: -1px;float: left;height: 500px;width: 214px;margin-top: 65px;padding:0px 24px 0px 0;border: solid 1px #dddddd;}
+.content8_right img{width: 105px;height: 40px;float: left;margin: 1px;}

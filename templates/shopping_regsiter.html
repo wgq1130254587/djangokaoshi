@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录_用户中心_莆田商城_莆田网—同城购，就够了！</title>
+		<link rel="shortcut  icon" type="image/x-icon" href="regsiterImg/favicon3.ico" media="screen"  />
+		<!--<link rel="shortcut icon" href="regsiterImg/favicon.ico" />-->
+		<!--插件-->
+		<script src="code_plug/js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="code_plug/js/jquery.idcode.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="code_plug/css/jquery.idcode.css"/>
+		<!--JQ库和cookie文件-->
+		<!--<script src="../jq/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../jq/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--头部和尾部的css文件和js文件-->
+		<link rel="stylesheet" type="text/css" href="../header_footer_css/herder_footer.css"/>
+		<script src="../header_footer_css/header_footer.js" type="text/javascript" charset="utf-8"></script>
+		<!--注册页面css样式文件和js文件-->
+		<link rel="stylesheet" type="text/css" href="shopping_regsiter.css"/>
+		<script src="shoopping_regsiter.js" type="text/javascript" charset="utf-8"></script>
+		<!--字体包-->
+		<link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css"/>
+
+	</head>
+	<body>
+		<!--头部header-->
+		<div id="header" style="border: none;">
+			<!--logo-->
+			<div class="logo clear" >
+				<!--头部logo微信定位-->
+				<div id="weixin">
+					<img src="J3_header_footer_img/PSTV9.png"/>
+				</div>
+				<!--logo的左边部分-->
+				<div class="logo_left " style="margin-right: 0;">
+					<span>欢迎光临本店！</span>
+					<span><a href="../shopping_login/shopping_login.html">请登录</a></span>
+					<span><a href="shopping_regsiter.html">免费注册</a></span>
+					<span><a href="# "><img src="J3_header_footer_img/shouji.png "/>关注微信</a></span>
+				</div>
+				<!--logo的右边部分-->
+				<div class="logo_right" >
+					<ul class="clear ">
+						<li>
+							<a href="# ">我的信息<img src="J3_header_footer_img/1.png " /></a>
+						</li>
+						<li class="l_r_font ">
+							<a href="# "><img src="J3_header_footer_img/X1.png " />我的订单</a>
+						</li>
+						<li class="l_r_font ">
+							<a href="../shopping_chainCart/chainCart.html"><img src="J3_header_footer_img/QA.png " />购物车</a>
+						</li>
+						<li>
+							<a href="# ">收藏夹<img src="J3_header_footer_img/1.png " /></a>
+						</li>
+						<li id="shouji">
+							<a href="# "><img src="J3_header_footer_img/shouji.png " />手机版<img src="J3_header_footer_img/1.png " /></a>
+						</li>
+						<li id="shangjia">
+							<a href="# ">商家支持<img src="J3_header_footer_img/1.png " /></a>
+						</li>
+						<li>
+							<a href="# ">卖家中心</a>
+						</li>
+												<!--我的信息下拉框 -->
+						<ul id="my_news1" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news2" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news3" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news4" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news5" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+					</ul>
+				</div>
+			</div>
+			<!--导航栏nav-->
+			<div class="nav ">
+				<!--导航栏nav  上层-->
+				<div class="sub_nav1 ">
+					<!--导航栏nav  上层     左边-->
+					<div class="s_n_img1 " style="padding:40px 0 0 125px;">
+						<a href="../shopping_index/s_index.html"><img src="J3_header_footer_img/logo.jpg.png " /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!--注册表单 regsiter-->
+		<div id="regsiter">
+			<div id="regsiter_top">
+				<h6>用户注册</h6>
+				<a href="../shopping_login/shopping_login.html">登录</a>
+				<p>我已经注册，现在就</p>
+			</div>
+			<div id="regsiter_bottom">
+<!--				<form action="" method="post">-->
+					<div id="reg_form">
+						<!--用户名-->
+						<div class="reg_item">
+							<p class="p_lable"><span class="reg_gai"><b class="fx4">*</b>用户名<span class="iconfont">&#xe7e6;</span></span></p>
+							<div class="reg_input">
+								<input type="text" name="text" id="name" value="" placeholder="用户名长度不能小于3" class="input" />
+							</div>
+							<p class="p_show"></p>
+						</div>
+						<!--邮件 email-->
+						<div class="reg_item">
+							<p class="p_lable"><span class="reg_gai"><b class="fx4">*</b>emial<span class="iconfont">&#xe65f;</span></span></p>
+							<div class="reg_input">
+								<input type="text" name="text" id="emial" value="" placeholder="请使用正确邮箱格式"  class="input"/>
+							</div>
+							<p class="p_show"></p>
+						</div>
+						<!--密码 password-->
+						<div class="reg_item">
+							<p class="p_lable"><span class="reg_gai"><b class="fx4">*</b>密码<span class="iconfont">&#xe908;</span></span></p>
+							<div class="reg_input">
+								<input type="password" name="text" id="pwd" value=""placeholder="密码长度不能小于6" class="input" />
+							</div>
+							<p class="p_show"></p>
+						</div>
+						<!--确认密码 password-->
+						<div class="reg_item">
+							<p class="p_lable"><span class="reg_gai"><b class="fx4" style="margin-left: 5px;">*</b>确认密码<span class="iconfont">&#xe908;</span></span></p>
+							<div class="reg_input">
+								<input type="password" name="text" id="confirm_pwd" value=""placeholder="确认密码" class="input" />
+							</div>
+							<p class="p_show"></p>
+						</div>
+						<!--输入qq-->
+						<div class="reg_item">
+							<p class="p_lable"><span class="reg_gai"><b class="fx4">*</b>QQ<span class="iconfont">&#xeba2;</span></span></p>
+							<div class="reg_input">
+								<input type="text" name="text" id="QQ" value=""placeholder="qq" class="input" />
+							</div>
+							<p class="p_show"></p>
+						</div>
+						<!--手机 phone-->
+						<div class="reg_item">
+							<p class="p_lable"><span class="reg_gai"><b class="fx4">*</b>手机<span class="iconfont">&#xe66c;</span></span></p>
+							<div class="reg_input">
+								<input type="text" name="text" id="phone" value=""placeholder="手机" class="input" />
+							</div>
+							<p class="p_show"></p>
+						</div>
+						<!--验证码-->
+						<div class="reg_item">
+							<p class="p_lable"><span class="reg_gai"><b class="fx4">*</b>验证码<span class="iconfont">&#xeb9b;</span></span></p>
+							<div class="reg_input" style="height: 22px;margin-top: 5px;">
+								<!--<input type="text" name="text" id="text" value="" />-->
+								<input type="text" id ="Txtidcode" class ="txtVerification" placeholder="验证码"><span id="idcode"></span>
+							</div>
+							<p class="p_show"></p>
+						</div>
+						<div class="reg_item" style="height: 30px;">
+							<span style="margin-left: 99px;"></span>
+							<input type="checkbox" name="checkbox" id="checkbox" value="" />
+							<label style="font-size: 13px;">我已看过并接受《<a href="#">用户协议</a>》</label>
+							<span class="span_show"></span>
+						</div>
+						<div class="reg_item">
+							<input type="submit" name="submit" id="submit" value="注册" />
+						</div>
+						<div class="reg_formlogo">
+							<img src="regsiterImg/login.jpg"/>
+						</div>
+					</div>
+<!--				</form>-->
+			</div>
+		</div>
+		
+		<!--注册成功提示图标-->
+		<div id="success_reg">
+			<img src="regsiterImg/success.png"/>
+		</div>
+		
+		
+		
+		
+		<!--尾部footer-->
+		<div id="footer">
+						
+			<!--尾部footer 下层 bottom-->
+			<div class="f_bottom ">
+				<div class="f_b_one ">
+					<ul>
+						<li style="padding-left: 180px; "><a href=" ">关于我们</a></li>
+						<li><a href=" #">联系我们</a></li>
+						<li><a href="# ">人才招聘</a></li>
+						<li><a href=" #">商家入驻</a></li>
+						<li style="border: none; "><a href="# ">登录商家管理中心</a></li>
+					</ul>
+				</div>
+				<div class="f_b_tow ">
+					<ul>
+						<li><a href=" #">&copy;2005-2016 莆田商城 版权所有，并保留所有权利。</a></li>
+						<li><a href="# "> 福建省莆田市城厢区筱塘南街85号</a></li>
+						<li><a href="# "> Tel: 0594-7966595</a></li>
+						<li><a href=" #">E-mail: 250990567@qq.com</a></li>
+					</ul>
+				</div>
+				<div class="f_b_three ">
+					<ul>
+						<li><a href="#"><img src="J3_header_footer_img/button_old_41.gif "/>&nbsp;250990567</a></li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</body>
+</html>

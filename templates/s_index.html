@@ -1,0 +1,851 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>莆田商城_莆田网—同城购，就够了！</title>
+		<link rel="shortcut  icon" type="image/x-icon" href="{% static 'img/favicon3.ico" media="screen' %}"  />
+		<!--头部和尾部的css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/herder_footer.css' %}" />
+		<!--莆田商城的banner广告css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_banner.css' %}" />
+		<!--莆田商城商品列表conten1 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content1.css' %}"/>
+		<!--莆田商城商品列表conten2 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content2.css' %}"/>
+		<!--莆田商城商品列表conten3 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content3.css' %}"/>
+		<!--莆田商城商品列表conten4 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content4.css' %}"/>
+		<!--莆田商城商品列表content5 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content5.css' %}"/>
+		<!--莆田商城商品列表content6 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content6.css' %}"/>
+		<!--莆田商城商品列表content7 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content7.css' %}"/>
+		<!--莆田商城商品列表content8 css样式表-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content8.css' %}"/>
+		<!--首页搜索框吸顶效果css样式-->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_xiding.css' %}"/>
+		<!--jQ样式托管-->
+		<!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>-->
+		<!--JQ文件导入  因为没网络-->
+		<script src="{% static 'js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--cookie jq文件-->
+		<script src="{% static 'js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--头部尾部js样式表  header_footer-->
+		<script src="{% static 'js/header_footer.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页 广告 banner js-->
+		<script src="{% static 'js/s_index_banner.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content1 js-->
+		<script src="{% static 'js/index_content1.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content2 js-->
+		<script src="{% static 'js/s_index_content2.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content3 js-->
+		<script src="{% static 'js/s_index_content3.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content4 js-->
+		<script src="{% static 'js/s_index_content4.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content5 js-->
+		<script src="{% static 'js/s_index_content5.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content6 js-->
+		<script src="{% static 'js/s_index_content6.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content7 js-->
+		<script src="{% static 'js/s_index_content7.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--主页  商品列表 content8 js-->
+		<script src="{% static 'js/s_index_content8.js' %}" type="text/javascript" charset="utf-8"></script>
+		<!--首页搜索框吸顶效果css样式-->
+		<script src="{% static 'js/s_index_xiding.js' %}" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--头部header-->
+		<div id="header">
+			<!--logo-->
+			<div class="logo clear" >
+				<!--头部logo微信定位-->
+				<div id="weixin">
+					<img src="{% static 'img/PSTV9.png' %}"/>
+				</div>
+				<!--logo的左边部分-->
+				<div class="logo_left " style="margin-right: 0; ">
+					<span>欢迎光临本店！</span>
+					<span><a href="{% static 'shopping_login.html' %}">请登录</a></span>
+					<span><a href="{% static 'shopping_regsiter.html' %}">免费注册</a></span>
+					<span><a href="# "><img src="{% static 'img/shouji.png' %}"/>关注微信</a></span>
+				</div>
+				<!--logo的右边部分-->
+				<div class="logo_right ">
+					<ul class="clear ">
+						<li>
+							<a href="# ">我的信息<img src="{% static 'img/1.png' %} " /></a>
+						</li>	
+						<li class="l_r_font ">
+							<a href="# "><img src="{% static 'img/X1.png' %} " />我的订单</a>
+						</li>
+						<li class="l_r_font ">
+							<a href="{% static 'chainCart.html' %}"><img src="{% static 'img/QA.png' %} " />购物车</a>
+						</li>
+						<li>
+							<a href="# ">收藏夹<img src="{% static 'img/1.png' %} " /></a>
+						</li>
+						<li id="shouji">
+							<a href="# "><img src="{% static 'img/shouji.png' %} " />手机版<img src="{% static 'img/1.png' %} " /></a>
+						</li>
+						<li id="shangjia">
+							<a href="# ">商家支持<img src="{% static 'img/1.png' %} " /></a>
+						</li>
+						<li>
+							<a href="# ">卖家中心</a>
+						</li>
+												<!--我的信息下拉框 -->
+						<ul id="my_news1" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news2" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news3" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news4" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+						<ul id="my_news5" >
+							<li style="float: none;"><a href="">已买到的宝贝</a></li>
+							<li style="float: none;"><a href="">我的管理地址</a></li>
+						</ul>
+					</ul>
+				</div>
+			</div>
+			<!--导航栏nav-->
+			<div class="nav ">
+				<!--导航栏nav  上层-->
+				<div class="sub_nav1 ">
+					<!--导航栏nav  上层     左边-->
+					<div class="s_n_img1 ">
+						<a href="# "><img src="{% static 'img/logo.jpg.png' %} " /></a>
+					</div>
+					<!--导航栏nav  上层     中间-->
+					<div class="s_search ">
+						<div class="s_input ">
+							<input type="text " placeholder="请输入关键词 " />
+							<button>搜索</button>
+						</div>
+
+						<div class="s_s_ul ">
+							<ul>
+								<li style="padding-left: 0; ">
+									<a href="# ">iPhone7</a>
+								</li>
+								<li>
+									<a href="# ">NZXT</a>
+								</li>
+								<li>
+									<a href="# ">旅行包</a>
+								</li>
+								<li>
+									<a href="# ">格力电暖器</a>
+								</li>
+								<li>
+									<a href="# ">年货先到家</a>
+								</li>
+								<li>
+									<a href="# ">MX2</a>
+								</li>
+								<li style="border-right: none; ">
+									<a href="# ">邓小平时代</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<!--导航栏nav  上层     右边-->
+					<div class="s_n_img2">
+						<a href="# "><img src="{% static 'img/TB14nYUFVXXXXbsXpXXD1MBIXXX-190-80.png' %} " /></a>
+					</div>
+				</div>
+				<!--导航栏nav  下层-->
+				<div class="sub_nav2 ">
+					<!--导航栏nav  下层   左边-->
+					<div class="sub_show ">
+						<img src="{% static 'img/FX.png' %} "/>
+					</div>
+					<!--导航栏nav  下层   右边-->
+					<div class="sub_show_a ">
+						<ul>
+							<li><a href="# ">首页</a></li>
+							<li><a href="# ">企业平台</a></li>
+							<li><a href="# ">安福电商城</a></li>
+							<li><a href="# ">特产特卖</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--广告 banner-->
+		<div class="banner clear ">
+			<!--广告 banner  左边 b_left-->
+			<div class="b_left ">
+				<ul>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/dr7.png' %} "/><span>安福电商城</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 24px; "/></a></li>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/5rY.png' %} "/><span>特产汇</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 51px; "/></a></li>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/XY2O.png' %} "/><span>生鲜食饮</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 38px; "/></a></li>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/NL.png' %} "/><span>服饰鞋包</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 38px; "></a></li>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/dr7.png' %} "/><span>数码家电</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 38px; "/></a></li>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/dr7.png' %} "/><span>家居百货</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 38px; "/></a></li>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/dr7.png' %} "/><span>美容保健</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 38px; "/></a></li>
+					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/dr7.png' %} "/><span>母婴玩具</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 38px; "/></a></li>
+				</ul>
+			</div>
+			
+			<!--广告 banner  中间 b_middle 轮播图-->
+			<div class="b_middle ">
+				<!--轮播图 top-->
+				<div class="carousel_top ">
+					<ul id="list_lunbo">
+						
+					</ul>
+					<ul id="list_button">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<!--轮播图 bottom-->
+				<div class="carousel_bottom ">
+					<ul id="lunbo_bottom">
+						
+					</ul>
+					<!--<div id="lunbo_bottom_l"></div>-->
+					<!--<div id="lunbo_bottom_r"></div>-->
+				</div>
+			</div>
+			
+			<!--广告 banner  右边 b_right-->
+			<div class="b_right ">
+				<div class="b_r_1 ">
+					<p><img src="{% static 'img/CP.png' %} "/></p>
+					<span>七天包退</span>
+					<span>正品保障</span>
+					<span>闪电发货</span>
+				</div>
+				<div class="b_r_2 ">
+					<span>招商入驻</span>
+					<span>商城公告</span>
+				</div>
+				<div class="b_r_3 ">
+					<div >
+						<a href="# "><img src="{% static 'img/fgu.png' %} "/></a>
+					</div>
+				</div>
+				<div class="b_r_4 ">
+					<span ><img  src="{% static 'img/dfs.png' %} "/></span>
+					<span >近期团购</span>
+				</div>
+				<div class="b_r_5 ">
+					
+				</div>
+			</div>
+			
+			
+			<!--banner添加的左边下拉列表-->
+			<div id="banner_xiala1" >
+				<div>
+					<ul>
+						<li>
+							<span>男鞋馆：</span>
+							<span>祥冠户外</span>
+							<span>商务鞋</span>
+							<span>时尚潮流</span>
+							<span>运动鞋</span>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span>女鞋馆：</span>
+							<span>莫蕾蔻蕾</span>
+							<span>古奇天伦</span>
+							<span>璐妮</span>
+							<span>雪地靴</span>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span>服装：</span>
+							<span>羽绒服</span>
+							<span>户外冲锋衣</span>
+							<span>婚纱礼服</span>
+							<span>运动服</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="banner_xiala2" >
+				<div>
+					<ul>
+						<li>
+							<span>本地特产：</span>
+							<span>四大名果</span>
+							<span>兴化米粉</span>
+							<span>海鲜干货</span>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span>全国特产：</span>
+							<span>坚果炒货</span>
+							<span>肉类即食</span>
+							<span>果脯蜜饯</span>
+							<span>其他</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="banner_xiala3" >
+				<div>
+					<ul>
+						<li>
+							<span>水果生鲜：</span>
+							<span>蔬菜</span>
+							<span>水果</span>
+							<span>鲜肉</span>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span>零食：</span>
+							<span>休闲零食</span>
+							<span>糖果/巧克力</span>
+							<span>饼干蛋糕</span>
+							<span>无糖食品</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!--商品列表 conten1-->
+		<div class="conten1">
+			<!--商品列表 conten1  conten1_top-->
+			<div class="conten1_top">
+				<ul>
+					<li>疯狂抢购</li>
+					<li>热销排行</li>
+					<li>商城热点</li>
+					<li>商城推荐</li>
+					<li>新品上市</li>
+					<li>限时折扣</li>
+				</ul>
+			</div>
+			
+			<!--商品列表 conten1  conten1_bottom-->
+			<div class="conten1_bottom">
+				<!--商品列表 conten1  conten1_bottom 左边大div-->
+				<div class="conten1_b_left">
+					<!--里面添加动态div数据-->
+				</div>
+				<div class="conten1_b_left">
+					<!--里面添加动态div数据-->
+				</div>
+				<!--商品列表 conten1  conten1_bottom 右边大div-->
+				<div class="conten1_b_right">
+					
+				</div>
+			</div>
+			
+		</div>
+
+
+		<!--商品列表 conten2-->
+		<div class="content2">
+			<!--商品列表 content2 左边 left-->
+			<div class="content2_left">
+				<div><img src="{% static 'img/WX97S1.png' %}"/></div>
+				<div><img src="{% static 'img/1421738445774402796.jpg' %}"/></div>
+				<div class="con2_left_link">
+					<ul>
+{#						<li><a href="../shopping_introduce/shop_introduce.html">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>#}
+                        <li><a href="{% static 'shop_introduce.html' %}">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--中间商品链接-->
+			<div class="content2_middle">
+				<!-- content2_middle 列表 li-->
+				<div class="con2_list">
+					<ul class="con2_list_ul">
+						<li class="con2_list_li">精挑细选</li>
+						<li class="con2_list_li">男鞋馆</li>
+						<li class="con2_list_li">女鞋馆</li>
+						<li class="con2_list_li">服装</li>
+					</ul>
+				</div>
+				<!--content2_middle 商品列表 动态获取数据-->
+				<div class="con2_goods">
+					
+				</div>
+				<div class="con2_goods">
+					
+				</div>
+				<div class="con2_goods">
+					
+				</div>
+				<div class="con2_goods">
+					
+				</div>
+				
+				
+			</div>
+			<!--右边广告栏-->
+			<div class="content2_right">
+				<div style="width: 215px;height: 260px;">
+					<img src="{% static 'img/1411540758333550880.png' %}"/>
+					<img src="{% static 'img/1435623662344780444.png' %}"/>
+					<img src="{% static 'img/1436226187434604608.jpg' %}"/>
+				</div>
+				<div style="width: 100%;height: 240px;background: #a0b6c0;"></div>
+			</div>
+		</div>
+		
+		<!--商品列表 conten3-->
+		<div class="content3">
+			<!--商品列表 content3 左边 left-->
+			<div class="content3_left">
+				<div><img src="{% static 'img/web-2-67.png' %}"/></div>
+				<div><img src="{% static 'img/1422146235908694200.jpg' %}"/></div>
+				<div class="con3_left_link">
+					<ul>
+						<li><a href="#">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--中间商品链接-->
+			<div class="content3_middle">
+				<!-- content3_middle 列表 li-->
+				<div class="con3_list">
+					<ul class="con3_list_ul">
+						<li class="con3_list_li">精挑细选</li>
+						<li class="con3_list_li">本地特产</li>
+						<li class="con3_list_li">全国特产</li>
+						<li class="con3_list_li">特产汇</li>
+					</ul>
+				</div>
+				<!--content3_middle 商品列表 动态获取数据-->
+				<div class="con3_goods">
+					
+				</div>
+				<div class="con3_goods">
+					
+				</div>
+				<div class="con3_goods">
+					
+				</div>
+				<div class="con3_goods">
+					
+				</div>
+				
+				
+			</div>
+			<!--右边广告栏-->
+			<div class="content3_right">
+				<div style="width: 215px;height: 260px;">
+					<img src="{% static 'img/1411540758333550880.png' %}"/>
+					<img src="{% static 'img/1435623662344780444.png' %}"/>
+					<img src="{% static 'img/1436226187434604608.jpg' %}"/>
+				</div>
+				<div style="width: 100%;height: 240px;background: #f58706;"></div>
+			</div>
+		</div>
+
+	
+		<!--商品列表 conten4-->
+		<div class="content4">
+			<!--商品列表 content4 左边 left-->
+			<div class="content4_left">
+				<div><img src="{% static 'img/web-5-68.png' %}"/></div>
+				<div><img src="{% static 'img/NT1HD4.png' %}"/></div>
+				<div class="con4_left_link">
+					<ul>
+						<li><a href="#">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--中间商品链接-->
+			<div class="content4_middle">
+				<!-- content4_middle 列表 li-->
+				<div class="con4_list">
+					<ul class="con4_list_ul">
+						<li class="con4_list_li">精挑细选</li>
+						<li class="con4_list_li">水果生鲜</li>
+						<li class="con4_list_li">零食</li>
+						<li class="con4_list_li">茶饮</li>
+					</ul>
+				</div>
+				<!--content4_middle 商品列表 动态获取数据-->
+				<div class="con4_goods">
+					
+				</div>
+				<div class="con4_goods">
+					
+				</div>
+				<div class="con4_goods">
+					
+				</div>
+				<div class="con4_goods">
+					
+				</div>								
+			</div>
+			<!--右边广告栏-->
+			<div class="content4_right">
+				<div style="width: 215px;height: 260px;">
+					<img src="{% static 'img/1411540758333550880.png' %}"/>
+					<img src="{% static 'img/1435623662344780444.png' %}"/>
+					<img src="{% static 'img/1436226187434604608.jpg' %}"/>
+				</div>
+				<div style="width: 100%;height: 240px;background: #27ae61;"></div>
+			</div>
+		</div>
+
+
+		<!--商品列表 conten5-->
+		<div class="content5">
+			<!--商品列表 content5 左边 left-->
+			<div class="content5_left">
+				<div><img src="{% static 'img/web-2-21.png' %}"/></div>
+				<div><img src="{% static 'img/1409819737829987522.png' %}"/></div>
+				<div class="con5_left_link">
+					<ul>
+						<li><a href="#">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--中间商品链接-->
+			<div class="content5_middle">
+				<!-- content5_middle 列表 li-->
+				<div class="con5_list">
+					<ul class="con5_list_ul">
+						<li class="con5_list_li">精挑细选</li>
+						<li class="con5_list_li">女装</li>
+						<li class="con5_list_li">男装</li>
+						<li class="con5_list_li">服饰配件</li>
+					</ul>
+				</div>
+				<!--content5_middle 商品列表 动态获取数据-->
+				<div class="con5_goods">
+					
+				</div>
+				<div class="con5_goods">
+					
+				</div>
+				<div class="con5_goods">
+					
+				</div>
+				<div class="con5_goods">
+					
+				</div>								
+			</div>
+			<!--右边广告栏-->
+			<div class="content5_right">
+				<div style="width: 215px;height: 260px;">
+					<img src="{% static 'img/1411540758333550880.png' %}"/>
+					<img src="{% static 'img/1435623662344780444.png' %}"/>
+					<img src="{% static 'img/1436226187434604608.jpg' %}"/>
+				</div>
+				<div style="width: 100%;height: 240px;background: #ff7373;"></div>
+			</div>
+		</div>
+
+
+		<!--商品列表 conten6-->
+		<div class="content6">
+			<!--商品列表 content6 左边 left-->
+			<div class="content6_left">
+				<div><img src="{% static 'img/web-5-51.png' %}"/></div>
+				<div><img src="{% static 'img/1409819700783821578.png' %}"/></div>
+				<div class="con6_left_link">
+					<ul>
+						<li><a href="#">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--中间商品链接-->
+			<div class="content6_middle">
+				<!-- content6_middle 列表 li-->
+				<div class="con6_list">
+					<ul class="con6_list_ul">
+						<li class="con6_list_li">精挑细选</li>
+						<li class="con6_list_li">手机手表</li>
+						<li class="con6_list_li">手机配件</li>
+						<li class="con6_list_li">摄影摄像</li>
+					</ul>
+				</div>
+				<!--content5_middle 商品列表 动态获取数据-->
+				<div class="con6_goods">
+					
+				</div>
+				<div class="con6_goods">
+					
+				</div>
+				<div class="con6_goods">
+					
+				</div>
+				<div class="con6_goods">
+					
+				</div>								
+			</div>
+			<!--右边广告栏-->
+			<div class="content6_right">
+				<div style="width: 215px;height: 260px;">
+					<img src="{% static 'img/1411540758333550880.png' %}"/>
+					<img src="{% static 'img/1435623662344780444.png' %}"/>
+					<img src="{% static 'img/1436226187434604608.jpg' %}"/>
+				</div>
+				<div style="width: 100%;height: 240px;background: #3598dc;"></div>
+			</div>
+		</div>
+
+
+		<!--商品列表 conten7-->
+		<div class="content7">
+			<!--商品列表 content7 左边 left-->
+			<div class="content7_left">
+				<div><img src="{% static 'img/web-4-519.png' %}"/></div>
+				<div><img style="margin-left: 2px;" src="{% static 'img/jj.png' %}"/></div>
+				<div class="con7_left_link">
+					<ul>
+						<li><a href="#">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--中间商品链接-->
+			<div class="content7_middle">
+				<!-- content7_middle 列表 li-->
+				<div class="con7_list">
+					<ul class="con7_list_ul">
+						<li class="con7_list_li">精挑细选</li>
+						<li class="con7_list_li">家纺</li>
+						<li class="con7_list_li">家具</li>
+						<li class="con7_list_li">厨具</li>
+					</ul>
+				</div>
+				<!--content5_middle 商品列表 动态获取数据-->
+				<div class="con7_goods">
+					           
+				</div>         
+				<div class="con7_goods">
+					          
+				</div>        
+				<div class="con7_goods">
+					          
+				</div>        
+				<div class="con7_goods">
+					
+				</div>								
+			</div>
+			<!--右边广告栏-->
+			<div class="content7_right">
+				<div style="width: 215px;height: 260px;">
+					<img src="{% static 'img/1411540758333550880.png' %}"/>
+					<img src="{% static 'img/1435623662344780444.png' %}"/>
+					<img src="{% static 'img/1436226187434604608.jpg' %}"/>
+				</div>
+				<div style="width: 100%;height: 240px;background: #cb6421;"></div>
+			</div>
+		</div>
+		
+		<!--商品列表 conten8-->
+		<div class="content8">
+			<!--商品列表 content8 左边 left-->
+			<div class="content8_left">
+				<div><img src="{% static 'img/web-8-64.png' %}"/></div>
+				<div><img src="{% static 'img/hz.png' %}"/></div>
+				<div class="con8_left_link">
+					<ul>
+						<li><a href="#">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--中间商品链接-->
+			<div class="content8_middle">
+				<!-- content8_middle 列表 li-->
+				<div class="con8_list">
+					<ul class="con8_list_ul">
+						<li class="con8_list_li">精挑细选</li>
+						<li class="con8_list_li">香水</li>
+						<li class="con8_list_li">护肤</li>
+						<li class="con8_list_li">彩妆</li>
+					</ul>
+				</div>
+				<!--content8_middle 商品列表 动态获取数据-->
+				<div class="con8_goods">
+					           
+				</div>         
+				<div class="con8_goods">
+					          
+				</div>        
+				<div class="con8_goods">
+					          
+				</div>        
+				<div class="con8_goods">
+					
+				</div>								
+			</div>
+			<!--右边广告栏-->
+			<div class="content8_right">
+				<div style="width: 215px;height: 260px;">
+					<img src="{% static 'img/1411540758333550880.png' %}"/>
+					<img src="{% static 'img/1435623662344780444.png' %}"/>
+					<img src="{% static 'img/1436226187434604608.jpg' %}"/>
+				</div>
+				<div style="width: 100%;height: 240px;background: #9c59b8;"></div>
+			</div>
+		</div>
+		
+
+
+		<!--维修 七天退换货 公告-->
+		<div class="service">
+			<img src="{% static 'img/ww111.jpg' %}"/>
+		</div>
+
+		<!--搜索框   吸顶效果-->
+		<div id="s_xiding">
+			<div id="s_xidingimg">
+				<img src="{% static 'img/DWD.png' %}"/>
+			</div>
+			<div style="float: left;width: 500px;">
+				<input style="width: 300px;height: 30px;margin-top: 10px;" type="text " placeholder="请输入关键词 " />
+				<button style="width: 100px;height: 30px;background: #CC0000;margin-top: 10px;margin-left: -10px;cursor: pointer;">搜索</button>
+			</div>
+		</div>
+
+		<!--右边侧栏信息栏 固定 css js  文件和吸顶效果公用-->
+		<div id="sidebar">
+			<div id="sidebar1">
+				<img src="{% static 'img/dddw.png' %}"/>
+				<img src="{% static 'img/ffff.png' %}"/>
+			</div>
+			<div id="sidebar2">
+				<img src="{% static 'img/huyt.png' %}"/>
+			</div>
+			<div id="sidebar3">
+				<img src="{% static 'img/tyhj.png' %}"/>
+			</div>
+			<div id="sidebar4">
+				<img src="{% static 'img/frrr.png' %}"/>
+				<img src="{% static 'img/drt.png' %}"/>
+			</div>
+			<div id="sidebar5">
+				<img src="{% static 'img/thpl.png' %}"/>
+				<img src="{% static 'img/unfs.png' %}"/>
+			</div>
+			<div id="sidebar6">
+				<img src="{% static 'img/byi.png' %}"/>
+			</div>
+			<div id="sidebar7">
+				<img src="{% static 'img/dingy.png' %}"/>
+			</div>
+		</div>
+		
+		<!--尾部footer-->
+		<div id="footer">
+			<!--尾部footer 上层 top-->
+			<div class="f_top clear ">
+				<ul>
+					<li><p>新手上路</p></li>
+					<li><a href="# ">售后流程</a></li>
+					<li><a href="# ">购物流程</a></li>
+					<li><a href="# ">在线支付</a></li>
+				</ul>
+				<ul>
+					<li><p>配送方式</p></li>
+					<li><a href="# ">货到付款</a></li>
+					<li><a href="# ">商家配送服务说明</a></li>
+					<li><a href="# ">配送费收取标准</a></li>
+				</ul>
+				<ul>
+					<li><p>购物指南</p></li>
+					<li><a href="# ">常见问题</a></li>
+					<li><a href="# ">订购流程</a></li>
+					<li><a href="# ">注册新会员</a></li>
+					<li><a href="# ">联系客服</a></li>
+				</ul>
+				<ul>
+					<li><p>售后服务</p></li>
+					<li><a href="# ">退换货原则</a></li>
+					<li><a href="# ">退款说明</a></li>
+					<li><a href="# ">取消订单</a></li>
+				</ul>
+				<ul>
+					<li><p>关于我们</p></li>
+					<li><a href="# ">关于莆田商城</a></li>
+					<li><a href="# ">加入我们</a></li>
+					<li><a href="# ">投诉与建议</a></li>
+					<li><a href="# ">联系方式</a></li>
+				</ul>
+				<ul style="border: none; ">
+					<li><p style="font-size: 26px; ">0594-7966595</p></li>
+					<li><p style="font-size: 14px;color: #999999;text-align: center;font-weight: normal; ">周一至周五&nbsp;9:00-17:30</p></li>
+					<li><p style="font-size: 28px; padding-top:33px; ">QQ&nbsp;250990567</p></li>
+				</ul>			
+			</div>									
+			<!--尾部footer 下层 bottom-->
+			<div class="f_bottom ">
+				<div class="f_b_one ">
+					<ul>
+						<li style="padding-left: 180px; "><a href=" ">关于我们</a></li>
+						<li><a href=" #">联系我们</a></li>
+						<li><a href="# ">人才招聘</a></li>
+						<li><a href=" #">商家入驻</a></li>
+						<li style="border: none; "><a href="# ">登录商家管理中心</a></li>
+					</ul>
+				</div>
+				<div class="f_b_tow ">
+					<ul>
+						<li><a href=" #">&copy;2005-2016 莆田商城 版权所有，并保留所有权利。</a></li>
+						<li><a href="# "> 福建省莆田市城厢区筱塘南街85号</a></li>
+						<li><a href="# "> Tel: 0594-7966595</a></li>
+						<li><a href=" #">E-mail: 250990567@qq.com</a></li>
+					</ul>
+				</div>
+				<div class="f_b_three ">
+					<ul>
+						<li><a href="#"><img src="{% static 'img/button_old_41.gif' %} "/>&nbsp;250990567</a></li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</body>
+
+</html>

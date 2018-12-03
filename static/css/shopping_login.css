@@ -1,0 +1,29 @@
+.clear:after {content: ".";clear: both;display: block;height: 0;overflow: hidden;visibility: hidden;
+}
+
+* {margin: 0 auto;padding: 0;border: none;
+}
+
+body {width: 1263px;height: auto;}
+
+/*login*/
+#login{width: 990px;height: 374px;margin:10px auto;border: solid 1px gainsboro;}
+#login_top{width:990px;height:33px;border-bottom:solid 1px gainsboro;overflow: hidden;background: #f4f4f4;}
+#login_top h6{line-height: 33px;padding-left: 20px;float: left;}
+#login_top a{line-height: 33px;float:right;text-decoration: none;font-size: 13px;color: blue;display: block;padding-right: 20px;}
+#login_top a:hover{color: #C40000;text-decoration: underline;}
+#login_top p{line-height: 33px;float:right;font-size: 13px;padding-right: 3px;}
+#login_bottom{width:908px;height:290px;padding: 20px 40px 30px ;}
+.form{width: 480px;height: 260px;float: left;}
+#guide{width: 400px;height: 290px;padding-left: 20px;border-left: solid 1px gainsboro;float: left;}
+.item{width: 480px;height: 50px;padding-top: 5px;}
+.item_no{width: 400px;height: 40px;margin: 0 ;}
+.item_no span{margin-left: 10px;font-size: 14px;}
+.item_no span a{text-decoration: none;color: black;}
+.item_no span a:hover{text-decoration: none;color: #C40000;}
+.lable{color: darkgray;font-size: 14px;}
+.logintext{width: 240px;height: 16px;padding: 10px 25px 10px 5px;border: solid 1px darkgray;}
+.checkbox{padding-left: 100px;}
+.loginbutton{width: 100px;height: 30px;background: #C81101;color: white;font-size: 17px;display: block;float: left;margin-left: 63px;}
+.backpwd{color: black;font-size: 13px;display: block;float: left;line-height: 30px;margin: 0 5px;}
+.backpwd:hover{color: #C40000;display: block;float: left;line-height: 30px;}
