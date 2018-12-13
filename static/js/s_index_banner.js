@@ -54,9 +54,9 @@ $(function() {
 		if (i==list_max.length) {
 			i=0;
 		}
-		list_max.eq(i).fadeIn(200).siblings().fadeOut(100);		
+		list_max.eq(i).fadeIn(200).siblings().fadeOut(100);
 		$("#list_button li").eq(i).css("background","#ff3300").siblings().css("background","grey");
-	}	
+	}
 	//鼠标点击轮播图小按钮的时候
 	$("#list_button li").eq(0).css("background","#ff3300");
 	$("#list_button li").click(function  () {
@@ -81,7 +81,7 @@ $(function() {
 			li.css("float","left");
 			$("#lunbo_bottom").append(li).addClass("hidden");
 		}
-		
+
 		//移入移出效果要放在里面，不然获取不到值
 		//移入移出改变透明度,并且停止轮播，移出恢复正常，启动轮播
 		$("#lunbo_bottom li").hover(function  () {
@@ -92,13 +92,13 @@ $(function() {
 			timerShow();
 		})
 	})
-	
-		
+
+
 	//移动的函数
 	function move() {
 		//!!!注意size在外边取不到
 		var size = $("#lunbo_bottom li").length;
-		
+
 		//如果超出了最后的图片
 		if(x >=size) {
 			$("#lunbo_bottom").stop().animate({

@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>莆田商城_莆田网—同城购，就够了！</title>
-		<link rel="shortcut  icon" type="image/x-icon" href="{% static 'img/favicon3.ico" media="screen' %}"  />
+		<link rel="shortcut  icon" type="image/x-icon" href="{% static "img/favicon3.ico" %}"  />
 		<!--头部和尾部的css样式表-->
 		<link rel="stylesheet" type="text/css" href="{% static 'css/herder_footer.css' %}" />
 		<!--莆田商城的banner广告css样式表-->
@@ -29,6 +29,8 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_content8.css' %}"/>
 		<!--首页搜索框吸顶效果css样式-->
 		<link rel="stylesheet" type="text/css" href="{% static 'css/s_index_xiding.css' %}"/>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}"/>
 		<!--jQ样式托管-->
 		<!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>-->
 		<!--JQ文件导入  因为没网络-->
@@ -57,6 +59,8 @@
 		<script src="{% static 'js/s_index_content8.js' %}" type="text/javascript" charset="utf-8"></script>
 		<!--首页搜索框吸顶效果css样式-->
 		<script src="{% static 'js/s_index_xiding.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/swiper.min.js' %}" type="text/javascript" charset="utf-8"></script>
+
 	</head>
 
 	<body>
@@ -71,21 +75,31 @@
 				<!--logo的左边部分-->
 				<div class="logo_left " style="margin-right: 0; ">
 					<span>欢迎光临本店！</span>
-					<span><a href="{% static 'shopping_login.html' %}">请登录</a></span>
-					<span><a href="{% static 'shopping_regsiter.html' %}">免费注册</a></span>
+{#					<span><a href="{% url 'pt:login' %}">{{ name | default:'未登录' }}</a></span>#}
+{#                    <span><a href="{% url 'pt:login' %}">未登录</a></span>#}
+                    {% if user %}
+                        <span><a href="{% url 'pt:login' %}">{{ user.name }}</a></span>
+                    {% else %}
+                        <span><a href="{% url 'pt:login' %}">未登录</a></span>
+                    {% endif %}
+                    {% if user %}
+                        <span><a href="{% url 'pt:logout' %}"> 退出登录 </a></span>
+                    {% endif %}
+					<span><a href="{% url 'pt:regsiter' %}">请注册</a></span>
 					<span><a href="# "><img src="{% static 'img/shouji.png' %}"/>关注微信</a></span>
+
 				</div>
 				<!--logo的右边部分-->
 				<div class="logo_right ">
 					<ul class="clear ">
 						<li>
 							<a href="# ">我的信息<img src="{% static 'img/1.png' %} " /></a>
-						</li>	
+						</li>
 						<li class="l_r_font ">
 							<a href="# "><img src="{% static 'img/X1.png' %} " />我的订单</a>
 						</li>
 						<li class="l_r_font ">
-							<a href="{% static 'chainCart.html' %}"><img src="{% static 'img/QA.png' %} " />购物车</a>
+							<a href="{% url 'pt:chaincart' %}"><img src="{% static 'img/QA.png' %} " />购物车</a>
 						</li>
 						<li>
 							<a href="# ">收藏夹<img src="{% static 'img/1.png' %} " /></a>
@@ -205,14 +219,21 @@
 					<li class="b_l_xiala"><a href="# "><img src="{% static 'img/dr7.png' %} "/><span>母婴玩具</span><img src="{% static 'img/Ayu.png' %} " style="margin-left: 38px; "/></a></li>
 				</ul>
 			</div>
-			
+
 			<!--广告 banner  中间 b_middle 轮播图-->
 			<div class="b_middle ">
 				<!--轮播图 top-->
 				<div class="carousel_top ">
-					<ul id="list_lunbo">
-						
-					</ul>
+
+                    <ul id="list_lunbo">
+                        {% for lunbo1 in putian_lunbo1s %}
+                            <li><img src="{{ lunbo1.img }}"></li>
+                        {% endfor %}
+                    </ul>
+{#					<ul id="list_lunbo">#}
+{##}
+{#					</ul>#}
+
 					<ul id="list_button">
 						<li></li>
 						<li></li>
@@ -220,16 +241,24 @@
 						<li></li>
 					</ul>
 				</div>
-				<!--轮播图 bottom-->
+
+
+                <!--轮播图 bottom-->
 				<div class="carousel_bottom ">
-					<ul id="lunbo_bottom">
-						
-					</ul>
+{#					<ul id="lunbo_bottom">#}
+{##}
+{#					</ul>#}
+                    <ul id="lunbo_bottom">
+                        {% for lunbo2s in putian_lunbo2s %}
+                            <li><img src="{{lunbo2s.img}}"></li>
+                        {% endfor %}
+                    </ul>
+
 					<!--<div id="lunbo_bottom_l"></div>-->
 					<!--<div id="lunbo_bottom_r"></div>-->
 				</div>
 			</div>
-			
+
 			<!--广告 banner  右边 b_right-->
 			<div class="b_right ">
 				<div class="b_r_1 ">
@@ -252,11 +281,11 @@
 					<span >近期团购</span>
 				</div>
 				<div class="b_r_5 ">
-					
+
 				</div>
 			</div>
-			
-			
+
+
 			<!--banner添加的左边下拉列表-->
 			<div id="banner_xiala1" >
 				<div>
@@ -331,9 +360,9 @@
 					</ul>
 				</div>
 			</div>
-			
+
 		</div>
-		
+
 		<!--商品列表 conten1-->
 		<div class="conten1">
 			<!--商品列表 conten1  conten1_top-->
@@ -347,22 +376,46 @@
 					<li>限时折扣</li>
 				</ul>
 			</div>
-			
+
 			<!--商品列表 conten1  conten1_bottom-->
 			<div class="conten1_bottom">
 				<!--商品列表 conten1  conten1_bottom 左边大div-->
+                <div class="conten1_b_left">
+
+                    {% for content1 in putian_content1 %}
+                        <div class="conten1_b_left_div">
+                            <a class="shopid" href="#">
+                                <img src="{{ content1.img }}">
+                                <p class="priceid"> {{ content1.miaoshu }} </p>
+                            </a>
+                            <p class="price_c">
+                                <span class="pricename">{{ content1.pricename }}</span>
+                                <span class="price">{{ content1.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+
 				<div class="conten1_b_left">
-					<!--里面添加动态div数据-->
-				</div>
-				<div class="conten1_b_left">
-					<!--里面添加动态div数据-->
+					{% for content2 in putian_content2 %}
+                        <div class="conten1_b_left_div">
+                            <a class="shopid" href="#">
+                                <img src="{{ content2.img }}">
+                                <p class="priceid"> {{ content2.miaoshu }} </p>
+                            </a>
+                            <p class="price_c">
+                                <span class="pricename">{{ content2.pricename }}</span>
+                                <span class="price">{{ content2.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<!--商品列表 conten1  conten1_bottom 右边大div-->
 				<div class="conten1_b_right">
-					
+
 				</div>
 			</div>
-			
+
 		</div>
 
 
@@ -375,10 +428,10 @@
 				<div class="con2_left_link">
 					<ul>
 {#						<li><a href="../shopping_introduce/shop_introduce.html">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>#}
-                        <li><a href="{% static 'shop_introduce.html' %}">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
-						<li><a href="#">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
-						<li><a href="#">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
-						<li><a href="#">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
+                        <li><a href="{% url 'pt:introduce' %}">祥冠户外</a><a style="border-right: none;" href="#">商务鞋</a></li>
+						<li><a href="{% url 'pt:introduce' %}">运动鞋</a><a style="border-right: none;" href="#">登山鞋</a></li>
+						<li><a href="{% url 'pt:introduce' %}">莫蕾蔻蕾</a><a style="border-right: none;" href="#">古奇天伦</a></li>
+						<li><a href="{% url 'pt:introduce' %}">璐妮</a><a style="border-right: none;" href="#">雪地靴</a></li>
 					</ul>
 				</div>
 			</div>
@@ -394,20 +447,64 @@
 					</ul>
 				</div>
 				<!--content2_middle 商品列表 动态获取数据-->
+                <div class="con2_goods">
+                    {% for content3 in putian_content3 %}
+                        <div class="con2_subgoods">
+                            <a class="con2_shopid" href="{% url 'pt:introduce' %}">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon2_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con2_price_c">
+                                <span class="con2_pricename">{{ content3.pricename }}</span>
+                                <span class="con2_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
 				<div class="con2_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con2_subgoods">
+                            <a class="con2_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon2_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con2_price_c">
+                                <span class="con2_pricename">{{ content3.pricename }}</span>
+                                <span class="con2_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con2_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con2_subgoods">
+                            <a class="con2_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon2_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con2_price_c">
+                                <span class="con2_pricename">{{ content3.pricename }}</span>
+                                <span class="con2_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con2_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con2_subgoods">
+                            <a class="con2_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon2_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con2_price_c">
+                                <span class="con2_pricename">{{ content3.pricename }}</span>
+                                <span class="con2_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
-				<div class="con2_goods">
-					
-				</div>
-				
-				
+
+
 			</div>
 			<!--右边广告栏-->
 			<div class="content2_right">
@@ -419,7 +516,7 @@
 				<div style="width: 100%;height: 240px;background: #a0b6c0;"></div>
 			</div>
 		</div>
-		
+
 		<!--商品列表 conten3-->
 		<div class="content3">
 			<!--商品列表 content3 左边 left-->
@@ -448,19 +545,63 @@
 				</div>
 				<!--content3_middle 商品列表 动态获取数据-->
 				<div class="con3_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con3_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con3_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con3_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
-				
-				
+
+
 			</div>
 			<!--右边广告栏-->
 			<div class="content3_right">
@@ -473,7 +614,7 @@
 			</div>
 		</div>
 
-	
+
 		<!--商品列表 conten4-->
 		<div class="content4">
 			<!--商品列表 content4 左边 left-->
@@ -501,19 +642,64 @@
 					</ul>
 				</div>
 				<!--content4_middle 商品列表 动态获取数据-->
-				<div class="con4_goods">
-					
-				</div>
-				<div class="con4_goods">
-					
-				</div>
-				<div class="con4_goods">
-					
-				</div>
-				<div class="con4_goods">
-					
-				</div>								
-			</div>
+                <div class="con4_goods">
+                    {% for content4 in putian_content4 %}
+                        <div class="con4_subgoods">
+                            <a class="con4_shopid" href="#">
+                                <img src="{{ content4.img }}">
+                                <p class="priccon4_priceid"> {{ content4.miaoshu }} </p>
+                            </a>
+                            <p class="con4_price_c">
+                                <span class="con4_pricename">{{ content4.pricename }}</span>
+                                <span class="con4_price">{{ content4.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <div class="con4_goods">
+                    {% for content4 in putian_content4 %}
+                        <div class="con4_subgoods">
+                            <a class="con4_shopid" href="#">
+                                <img src="{{ content4.img }}">
+                                <p class="priccon4_priceid"> {{ content4.miaoshu }} </p>
+                            </a>
+                            <p class="con4_price_c">
+                                <span class="con4_pricename">{{ content4.pricename }}</span>
+                                <span class="con4_price">{{ content4.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="con4_goods">
+                    {% for content4 in putian_content4 %}
+                        <div class="con4_subgoods">
+                            <a class="con4_shopid" href="#">
+                                <img src="{{ content4.img }}">
+                                <p class="priccon4_priceid"> {{ content4.miaoshu }} </p>
+                            </a>
+                            <p class="con4_price_c">
+                                <span class="con4_pricename">{{ content4.pricename }}</span>
+                                <span class="con4_price">{{ content4.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="con4_goods">
+                    {% for content4 in putian_content4 %}
+                        <div class="con4_subgoods">
+                            <a class="con4_shopid" href="#">
+                                <img src="{{ content4.img }}">
+                                <p class="priccon4_priceid"> {{ content4.miaoshu }} </p>
+                            </a>
+                            <p class="con4_price_c">
+                                <span class="con4_pricename">{{ content4.pricename }}</span>
+                                <span class="con4_price">{{ content4.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
 			<!--右边广告栏-->
 			<div class="content4_right">
 				<div style="width: 215px;height: 260px;">
@@ -554,17 +740,61 @@
 				</div>
 				<!--content5_middle 商品列表 动态获取数据-->
 				<div class="con5_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con5_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con5_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con5_goods">
-					
-				</div>								
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 			</div>
 			<!--右边广告栏-->
 			<div class="content5_right">
@@ -606,17 +836,61 @@
 				</div>
 				<!--content5_middle 商品列表 动态获取数据-->
 				<div class="con6_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con6_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con6_goods">
-					
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
 				</div>
 				<div class="con6_goods">
-					
-				</div>								
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 			</div>
 			<!--右边广告栏-->
 			<div class="content6_right">
@@ -658,17 +932,61 @@
 				</div>
 				<!--content5_middle 商品列表 动态获取数据-->
 				<div class="con7_goods">
-					           
-				</div>         
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 				<div class="con7_goods">
-					          
-				</div>        
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 				<div class="con7_goods">
-					          
-				</div>        
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 				<div class="con7_goods">
-					
-				</div>								
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 			</div>
 			<!--右边广告栏-->
 			<div class="content7_right">
@@ -680,7 +998,7 @@
 				<div style="width: 100%;height: 240px;background: #cb6421;"></div>
 			</div>
 		</div>
-		
+
 		<!--商品列表 conten8-->
 		<div class="content8">
 			<!--商品列表 content8 左边 left-->
@@ -709,17 +1027,61 @@
 				</div>
 				<!--content8_middle 商品列表 动态获取数据-->
 				<div class="con8_goods">
-					           
-				</div>         
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 				<div class="con8_goods">
-					          
-				</div>        
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 				<div class="con8_goods">
-					          
-				</div>        
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 				<div class="con8_goods">
-					
-				</div>								
+                    {% for content3 in putian_content3 %}
+                        <div class="con3_subgoods">
+                            <a class="con3_shopid" href="#">
+                                <img src="{{ content3.img }}">
+                                <p class="priccon3_priceid"> {{ content3.miaoshu }} </p>
+                            </a>
+                            <p class="con3_price_c">
+                                <span class="con3_pricename">{{ content3.pricename }}</span>
+                                <span class="con3_price">{{ content3.price }}</span>
+                            </p>
+                        </div>
+                    {% endfor %}
+				</div>
 			</div>
 			<!--右边广告栏-->
 			<div class="content8_right">
@@ -731,7 +1093,7 @@
 				<div style="width: 100%;height: 240px;background: #9c59b8;"></div>
 			</div>
 		</div>
-		
+
 
 
 		<!--维修 七天退换货 公告-->
@@ -777,7 +1139,7 @@
 				<img src="{% static 'img/dingy.png' %}"/>
 			</div>
 		</div>
-		
+
 		<!--尾部footer-->
 		<div id="footer">
 			<!--尾部footer 上层 top-->
@@ -818,8 +1180,8 @@
 					<li><p style="font-size: 26px; ">0594-7966595</p></li>
 					<li><p style="font-size: 14px;color: #999999;text-align: center;font-weight: normal; ">周一至周五&nbsp;9:00-17:30</p></li>
 					<li><p style="font-size: 28px; padding-top:33px; ">QQ&nbsp;250990567</p></li>
-				</ul>			
-			</div>									
+				</ul>
+			</div>
 			<!--尾部footer 下层 bottom-->
 			<div class="f_bottom ">
 				<div class="f_b_one ">
@@ -843,7 +1205,7 @@
 					<ul>
 						<li><a href="#"><img src="{% static 'img/button_old_41.gif' %} "/>&nbsp;250990567</a></li>
 					</ul>
-				</div>				
+				</div>
 			</div>
 		</div>
 	</body>

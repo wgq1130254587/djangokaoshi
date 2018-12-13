@@ -1,20 +1,23 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>登录_用户中心_莆田商城_莆田网—同城购，就够了！</title>
-		<link rel="shortcut  icon" type="image/x-icon" href="loginImg/favicon3.ico" media="screen"  />
+		<link rel="shortcut  icon" type="image/x-icon" href="{% static "img/favicon3.ico" %}" />
 		<!--JQ库和cookie文件-->
-		<script src="../jq/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../jq/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/jquery.cookie.js'%}" type="text/javascript" charset="utf-8"></script>
 		<!--头部和尾部的css文件和js文件-->
-		<link rel="stylesheet" type="text/css" href="../header_footer_css/herder_footer.css"/>
-		<script src="../header_footer_css/header_footer.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/herder_footer.css'%}"/>
+		<script src="{% static 'js/header_footer.js' %}" type="text/javascript" charset="utf-8"></script>
 		<!--登录页面css样式文件和js文件-->
-		<link rel="stylesheet" type="text/css" href="shopping_login.css"/>
-		<script src="shopping_login.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/shopping_login.css'  %}"/>
+		<script src="{% static 'js/shopping_login.js' %}" type="text/javascript" charset="utf-8"></script>
 		<!--字体包-->
-		<link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/iconfont.css' %}"/>
 	</head>
 	<body>
 		<!--头部header-->
@@ -23,35 +26,36 @@
 			<div class="logo clear" >
 				<!--头部logo微信定位-->
 				<div id="weixin">
-					<img src="J3_header_footer_img/PSTV9.png"/>
+					<img src="{% static 'img/PSTV9.png' %}"/>
 				</div>
 				<!--logo的左边部分-->
 				<div class="logo_left " style="margin-right: 0;">
 					<span>欢迎光临本店！</span>
-					<span><a href="shopping_login.html">请登录</a></span>
-					<span><a href="../shopping_regsiter/shopping_regsiter.html">免费注册</a></span>
-					<span><a href="# "><img src="J3_header_footer_img/shouji.png "/>关注微信</a></span>
+                    <span><a href="{% url 'pt:index' %}">返回首页</a></span>
+{#					<span><a href="shopping_login.html">请登录</a></span>#}
+					<span><a href="{% url 'pt:regsiter' %}">免费注册</a></span>
+					<span><a href="# "><img src="{% static 'img/shouji.png' %}"/>关注微信</a></span>
 				</div>
 				<!--logo的右边部分-->
 				<div class="logo_right " >
 					<ul class="clear ">
 						<li>
-							<a href="# ">我的信息<img src="J3_header_footer_img/1.png " /></a>
+							<a href="# ">我的信息<img src="{% static 'img/1.png'%}" /></a>
 						</li>
 						<li class="l_r_font ">
-							<a href="# "><img src="J3_header_footer_img/X1.png " />我的订单</a>
+							<a href="# "><img src="{% static 'img/X1.png'%} " />我的订单</a>
 						</li>
 						<li class="l_r_font ">
-							<a href="../shopping_chainCart/chainCart.html"><img src="J3_header_footer_img/QA.png " />购物车</a>
+							<a href="{% url 'pt:chaincart' %}"><img src="{% static 'img/QA.png' %}" />购物车</a>
 						</li>
 						<li>
-							<a href="# ">收藏夹<img src="J3_header_footer_img/1.png " /></a>
+							<a href="# ">收藏夹<img src="{% static 'img/1.png'%}" /></a>
 						</li>
 						<li id="shouji">
-							<a href="# "><img src="J3_header_footer_img/shouji.png " />手机版<img src="J3_header_footer_img/1.png " /></a>
+							<a href="# "><img src="{% static 'img/shouji.png'%} " />手机版<img src="{% static 'img/1.png' %}" /></a>
 						</li>
 						<li id="shangjia">
-							<a href="# ">商家支持<img src="J3_header_footer_img/1.png " /></a>
+							<a href="# ">商家支持<img src="{% static 'img/1.png'%}" /></a>
 						</li>
 						<li>
 							<a href="# ">卖家中心</a>
@@ -86,7 +90,7 @@
 				<div class="sub_nav1 ">
 					<!--导航栏nav  上层     左边-->
 					<div class="s_n_img1 " style="padding:40px 0 0 125px;">
-						<a href="../shopping_index/s_index.html"><img src="J3_header_footer_img/logo.jpg.png " /></a>
+						<a href="{% url 'pt:index' %}"><img src="{% static 'img/logo.jpg.png' %} " /></a>
 					</div>
 				</div>
 			</div>
@@ -96,15 +100,18 @@
 		<div id="login">
 			<div id="login_top">
 				<h6>用户登录</h6>
-				<a href="../shopping_regsiter/shopping_regsiter.html">注册</a>
+				<a href="{% url 'pt:regsiter' %}">注册</a>
 				<p>我还没有注册，马上去</p>
 			</div>
 			<div id="login_bottom">
-				<!--<form action="" method="post">-->
+
+
+				<form action="{% url 'pt:login' %}" method="post">
+                    {% csrf_token %}
 					<div class="form">
 						<div class="item">
 							<span class="lable "><span class="iconfont">&#xe7e6;</span>&nbsp;&nbsp;</span>
-							<input type="text" name="username" class="logintext" id="loginname" value="" placeholder="用户名" />
+							<input type="text" name="email" class="logintext" id="loginname" value="" placeholder="邮箱" />
 						</div>
 						<div class="item">
 							<span class="lable"><span class="iconfont">&#xe908;</span>&nbsp;&nbsp;</span>
@@ -121,16 +128,17 @@
 							<a href="#" class="backpwd">注册邮件找回密码</a>
 						</div>
 						<div class="item_no">
-							<span><a href="#"><img src="loginImg/qq_login.gif"/>QQ</a></span>
-							<span><a href="#"><img src="loginImg/sina_login.gif"/>新浪</a></span>
-							<span><a href="#"><img src="loginImg/alipay_login.gif"/>支付宝</a></span>
-							<span><a href="#"><img src="loginImg/taobao_login.gif"/>淘宝</a></span>
+							<span><a href="#"><img src="{% static 'img/qq_login.gif' %}"/>QQ</a></span>
+							<span><a href="#"><img src="{% static 'img/sina_login.gif' %}"/>新浪</a></span>
+							<span><a href="#"><img src="{% static 'img/alipay_login.gif'%}"/>支付宝</a></span>
+							<span><a href="#"><img src="{% static 'img/taobao_login.gif' %}"/>淘宝</a></span>
 						</div>
-					</div>					
-<!--				</form>-->
+					</div>
+                </form>
+
 				<!--right-->
 				<div id="guide">
-					<img src="loginImg/login.jpg"/>
+					<img src="{% static 'img/login.jpg' %}"/>
 				</div>
 			</div>
 		</div>
@@ -159,7 +167,7 @@
 				</div>
 				<div class="f_b_three ">
 					<ul>
-						<li><a href="#"><img src="J3_header_footer_img/button_old_41.gif "/>&nbsp;250990567</a></li>
+						<li><a href="#"><img src="{% static 'img/button_old_41.gif' %}"/>&nbsp;250990567</a></li>
 					</ul>
 				</div>				
 			</div>

@@ -16,7 +16,7 @@
 .conten1_bottom .conten1_b_left img{width: 160px;height: 160px;}
 .shopid{text-decoration: none;font-size: 13px;color: #3C3C3C;margin-top: 3px;}
 .shopid:hover{text-decoration: underline;color: #C40000;}
-.price{color:#cc0000;font-weight: 600;}
+.price{color:#cc0000;font-weight: 500;}
 .pricename{color:#999999;font-size: 12px;margin-right: 3px;}
 .priceid{margin-top: 5px;}
 .price_c{margin-top: 2px;}

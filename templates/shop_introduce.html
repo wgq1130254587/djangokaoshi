@@ -1,3 +1,6 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -31,8 +34,8 @@
 				<!--logo的左边部分-->
 				<div class="logo_left " style="margin-right: 0; ">
 					<span>欢迎光临本店！</span>
-					<span><a href="../shopping_login/shopping_login.html">请登录</a></span>
-					<span><a href="../shopping_regsiter/shopping_regsiter.html">免费注册</a></span>
+					<span><a href="{% url 'pt:login' %}">请登录</a></span>
+					<span><a href="{% url 'pt:regsiter' %}">免费注册</a></span>
 					<span><a href="# "><img src="{% static 'img/shouji.png' %} "/>关注微信</a></span>
 				</div>
 				<!--logo的右边部分-->
@@ -45,7 +48,7 @@
 							<a href="# "><img src="{% static 'img/X1.png' %} " />我的订单</a>
 						</li>
 						<li class="l_r_font " id="end">
-							<a href="../shopping_chainCart/chainCart.html" ><img src="{% static 'img/QA.png' %} " />购物车</a>
+							<a href="{% url 'pt:chaincart' %}" ><img src="{% static 'img/QA.png' %} " />购物车</a>
 							<div id="msg">成功加入购物车！</div>
 						</li>
 						<li>
@@ -90,7 +93,7 @@
 				<div class="sub_nav1 ">
 					<!--导航栏nav  上层     左边-->
 					<div class="s_n_img1 ">
-						<a href="../shopping_index/s_index.html" > <img src="{% static 'img/logo.jpg.png' %} " /></a>
+						<a href="{% url 'pt:index' %}" > <img src="{% static 'img/logo.jpg.png' %} " /></a>
 					</div>
 					<!--导航栏nav  上层     中间-->
 					<div class="s_search ">
@@ -149,14 +152,18 @@
 				</div>
 			</div>
 		</div>
-	
+
+
+
 		<!--商品详情介绍框  放大镜-->
 		<div id="introduce">
+            {% for content5 in putian_content5%}
 			<div id="smallImg">
-				<div id="smallArea">	
+				<div id="smallArea">
+                    <p class="priccon2_priceid"> {{ content5.miaoshu }} </p>
 				</div>
 			</div>
-			
+
 			<!--商品名称和价格详情-->
 			<div id="introducePrice">
 				<!--<p id="introducePrice_text1">祥冠春秋运动鞋男女款登山鞋透气新款情侣款旅游鞋GORE-TEX徒步鞋</p>-->
@@ -165,24 +172,41 @@
 				<!--<p id="introducePrice_text2">本 店 价:<span>￥228.00</span></p>-->
 				<p id="introducePrice_text2"></p>
 				<p id="introducePrice_text3">商品品牌：<a href="#">祥冠</a></p>
-				<p id="introducePrice_text4">注册会员：￥228.00</p>
-				<p id="introducePrice_text6">初级会员：￥228.00</p>
-				<p id="introducePrice_text7">中级会员：￥228.00</p>
-				<p id="introducePrice_text8">高级会员：￥228.00</p>
+				<p id="introducePrice_text4">注册会员：￥{{ content5.price }}</p>
+				<p id="introducePrice_text6">初级会员：￥{{ content5.price }}</p>
+				<p id="introducePrice_text7">中级会员：￥{{ content5.price }}</p>
+				<p id="introducePrice_text8">高级会员：￥{{ content5.price }}</p>
 				<p id="introducePrice_text9">商品重量： 0克</p>
 				<p id="introducePrice_text10">商品库存：（99 ）</p>
-				
-				<button id="cart"></button>
+
+				<button id="cart">{{ content5.idnamm }}</button>
 				<button id="chainCart"></button>
-				
+
 			</div>
-			
+
 			<div id="bigArea">
 				<!--<img id="bigImg" src="introduce.png" />-->
 				<img id="bigImg" src="" />
 			</div>
+            {% endfor %}
 		</div>
-	
+
+{#	                <div class="con2_goods">#}
+{#                    {% for content3 in putian_content3 %}#}
+{#                        <div class="con2_subgoods">#}
+{#                            <a class="con2_shopid" href="{% url 'pt:introduce' %}">#}
+{#                                <img src="{{ content3.img }}">#}
+{#                                <p class="priccon2_priceid"> {{ content3.miaoshu }} </p>#}
+{#                            </a>#}
+{#                            <p class="con2_price_c">#}
+{#                                <span class="con2_pricename">{{ content3.pricename }}</span>#}
+{#                                <span class="con2_price">{{ content3.price }}</span>#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+
+
 		<!--尾部footer-->
 		<div id="footer">
 			<!--尾部footer 上层 top-->
@@ -251,6 +275,6 @@
 				</div>				
 			</div>
 		</div>
-	
+
 	</body>
 </html>
